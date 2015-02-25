@@ -2,7 +2,7 @@ var exec = require('cordova/exec');
 
 
 exports.sendPersonViaPlugin = function(firstName,LastName,address1,address2,successCallback,errorCallback){
-	cordova.exec(
+	exec(
 		successCallback,
 		errorCallback,
 		"SendRequestPlugin", //mapped to native java class
