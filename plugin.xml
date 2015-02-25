@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright YINAN YANG - SUBZERODIGITAL - 2015-2016
+	Not for commercial use.
+-->
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		id="com.subzerodigital.sendrequestplugin"
+		version="0.0.1d">
+
+	<name>SendRequestPlugin</name>
+
+	<description>
+		To pass data between hybrid and native apps
+		Plugin not for commercial use,
+	</description>
+
+	<repo></repo>
+	<keywords></keywords>
+	<license>Subzerodigital 2015-2016</license>
+	<author>Yinan Yang</author>
+
+	<engines>
+		<engine name="cordova" version=">=3.0.0"/>
+	</engines>
+
+	<!-- interface -->
+	<js-module src="www/sendRequest.js" name="sendRequest">
+
+	</js-module>
+
+	<!-- android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="SendRequestPlugin">
+				<param name="android-package"
+					   value="com.subzerodigital.SendRequestPlugin"/>
+			</feature>
+		</config-file>
+
+		<source-file
+				src="src/android/SendRequstPlugin.java"
+				target-dir="src/android"/>
+
+	</platform>
+
+</plugin>
