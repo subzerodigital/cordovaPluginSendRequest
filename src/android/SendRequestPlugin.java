@@ -25,7 +25,7 @@ public class SendRequestPlugin extends CordovaPlugin
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException{
 
-    	Toast.makeText(cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
+    	Toast.makeText(this.cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
     	//Toast.makeText(cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
 
         try {
