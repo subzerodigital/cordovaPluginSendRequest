@@ -43,7 +43,7 @@ public class SendRequestPlugin extends CordovaPlugin
 
                 //show some log and toast
                 Log.i("PLUGIN","plugin is working! "+arg_object.getString("firstName"));
-                Toast.makeText(this.cordova.getActivity.getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this.cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
 
 
                 callbackContext.success();
