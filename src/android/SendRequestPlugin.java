@@ -14,7 +14,9 @@ import android.content.Intent;
 public class SendRequestPlugin extends CordovaPlugin
  {
 
-	private CordovaWebView
+	 //define actions
+     public static final String PASS_PERSON_INFO = "passPersonInfo";
+     public static final String PASS_VEHICLE_INFO = "passVehicleInfo";
 
     public SendRequestPlugin(){
 
@@ -27,9 +29,6 @@ public class SendRequestPlugin extends CordovaPlugin
     }
 
 
-    //define actions
-    public static final String PASS_PERSON_INFO = "passPersonInfo";
-    public static final String PASS_VEHICLE_INFO = "passVehicleInfo";
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException{
@@ -37,6 +36,7 @@ public class SendRequestPlugin extends CordovaPlugin
     	Toast.makeText(webView.getContext(),"plugin running",Toast.LENGTH_SHORT).show();
     	//Toast.makeText(cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
 
+/*
         try {
             if (PASS_PERSON_INFO.equals(action)) {
                 JSONObject arg_object = args.getJSONObject(0);
@@ -69,6 +69,9 @@ public class SendRequestPlugin extends CordovaPlugin
             callbackContext.error(e.getMessage());
             return false;
         }
+
+*/
+
     }
 
 }
