@@ -14,9 +14,18 @@ import android.content.Intent;
 public class SendRequestPlugin extends CordovaPlugin
  {
 
+	private CordovaWebView
+
     public SendRequestPlugin(){
 
     }
+
+    @Override
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+        // your init code here
+    }
+
 
     //define actions
     public static final String PASS_PERSON_INFO = "passPersonInfo";
@@ -25,7 +34,7 @@ public class SendRequestPlugin extends CordovaPlugin
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException{
 
-    	Toast.makeText(this.cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
+    	Toast.makeText(webView.getContext(),"plugin running",Toast.LENGTH_SHORT).show();
     	//Toast.makeText(cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
 
         try {
@@ -45,9 +54,8 @@ public class SendRequestPlugin extends CordovaPlugin
                 //this.cordova.getActivity().startActivity(reqestIntent);
                 //show some log and toast
 
-                Toast.makeText(this.cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this.cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
                 Log.i("PLUGIN","plugin is working! "+arg_object.getString("firstName"));
-
 
                 callbackContext.success();
 
