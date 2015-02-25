@@ -40,7 +40,7 @@
 		</config-file>
 
 		<source-file
-				src="src/android/SendRequstPlugin.java"
+				src="src/android/SendRequestPlugin.java"
 				target-dir="src/android"/>
 
 	</platform>
