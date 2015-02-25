@@ -27,7 +27,8 @@
 
 	<!-- interface -->
 	<js-module src="www/sendRequest.js" name="sendRequest">
-
+		<clobbers target="cordova.plugins.sendRequest" />
+		<clobbers target="plugin.sendRequest" />
 	</js-module>
 
 	<!-- android -->

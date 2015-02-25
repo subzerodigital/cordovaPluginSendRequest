@@ -24,6 +24,10 @@ public class SendRequestPlugin extends CordovaPlugin
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException{
+
+    	Toast.makeText(cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
+    	//Toast.makeText(cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
+
         try {
             if (PASS_PERSON_INFO.equals(action)) {
                 JSONObject arg_object = args.getJSONObject(0);
@@ -39,11 +43,10 @@ public class SendRequestPlugin extends CordovaPlugin
                         .putExtra("address2", arg_object.getString("address2"));
 
                 //this.cordova.getActivity().startActivity(reqestIntent);
-
-
                 //show some log and toast
-                Log.i("PLUGIN","plugin is working! "+arg_object.getString("firstName"));
+
                 Toast.makeText(this.cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
+                Log.i("PLUGIN","plugin is working! "+arg_object.getString("firstName"));
 
 
                 callbackContext.success();
