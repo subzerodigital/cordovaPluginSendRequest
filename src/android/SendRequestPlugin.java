@@ -11,7 +11,8 @@ import android.app.Activity;
 import android.content.Intent;
 
 
-public class SendRequestPlugin extends CordovaPlugin {
+public class SendRequestPlugin extends CordovaPlugin
+ {
 
     public SendRequestPlugin(){
 
