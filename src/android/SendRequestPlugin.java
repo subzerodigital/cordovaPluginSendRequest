@@ -12,29 +12,33 @@ import android.content.Intent;
 
 
 public class SendRequestPlugin extends CordovaPlugin
- {
+{
 
-	 //define actions
-     public static final String PASS_PERSON_INFO = "passPersonInfo";
-     public static final String PASS_VEHICLE_INFO = "passVehicleInfo";
+    //define actions
+    public static final String PASS_PERSON_INFO = "passPersonInfo";
+    public static final String PASS_VEHICLE_INFO = "passVehicleInfo";
 
     public SendRequestPlugin(){
 
     }
 
-    @Override
-    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-        super.initialize(cordova, webView);
-        // your init code here
-    }
-
-
+	/*
+        @Override
+        public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+            super.initialize(cordova, webView);
+            // your init code here
+        }
+    */
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException{
 
-    	Toast.makeText(webView.getContext(),"plugin running",Toast.LENGTH_SHORT).show();
-    	//Toast.makeText(cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(webView.getContext(), "plugin running my own", Toast.LENGTH_SHORT).show();
+            }
+        });
+            //Toast.makeText(cordova.getActivity().getApplicationContext(),"plugin running",Toast.LENGTH_SHORT).show();
 
 /*
         try {
@@ -71,7 +75,7 @@ public class SendRequestPlugin extends CordovaPlugin
         }
 
 */
+            return true;
+        }
 
     }
-
-}
